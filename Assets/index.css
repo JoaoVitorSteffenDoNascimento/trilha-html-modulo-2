@@ -1,0 +1,363 @@
+/* ============================
+   Reset e variáveis de cor
+   ============================ */
+:root{
+  --verde: #2ea44f;
+  --verde-escuro: #278a43;
+  --branco: #ffffff;
+  --fundo: #f5f5f5;
+  --texto: #333333;
+  --cinza: #e6e6e6;
+  --sombra: rgba(0,0,0,0.08);
+  --radius: 12px;
+  --menu-width: 220px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body{
+  height: 100%;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background-color: var(--fundo);
+  color: var(--texto);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  min-height: 100vh;
+  display: flex;
+}
+
+/* ============================
+   Layout principal
+   ============================ */
+.wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1300px;
+  margin: 24px auto;
+  gap: 24px;
+  padding: 0 16px;
+}
+
+/* ============================
+   Menu lateral fixo
+   ============================ */
+.menu {
+  width: var(--menu-width);
+  min-width: var(--menu-width);
+  background-color: var(--verde);
+  padding: 22px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 2px 6px 18px var(--sombra);
+  position: sticky;
+  top: 24px;
+  height: calc(100vh - 48px);
+  overflow: auto;
+}
+
+/* menu interno */
+.menu ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu a{
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent);
+  transition: transform .15s ease, background .15s ease;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,0.04);
+}
+
+.menu a:hover,
+.menu a.active {
+  background-color: var(--verde-escuro);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* ============================
+   Área principal (conteúdo)
+   ============================ */
+.main {
+  flex: 1;
+  padding: 4px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Banner (header) */
+.header {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 26px var(--sombra);
+  background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01));
+}
+
+/* imagem como banner responsivo */
+.header img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* texto sobreposto no banner */
+.banner-texto {
+  position: absolute;
+  left: 22px;
+  bottom: 22px;
+  background-color: rgba(0,0,0,0.45);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+}
+
+.banner-texto h1{
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: .2px;
+}
+
+/* ============================
+   Blocos de conteúdo
+   ============================ */
+.content {
+  background-color: var(--branco);
+  padding: 22px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+
+/* títulos dentro do conteúdo */
+.content h1, .content h2, .content h3{
+  color: var(--verde);
+  margin-bottom: 12px;
+}
+
+/* parágrafos */
+.content p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* ============================
+   Tabela estilizada
+   ============================ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+  background-color: var(--branco);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+}
+
+thead th {
+  background-color: var(--verde);
+  color: #fff;
+  font-weight: 700;
+  padding: 14px 12px;
+  text-align: center;
+  font-size: 15px;
+}
+
+tbody td {
+  padding: 14px 12px;
+  text-align: center;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+  color: #333;
+}
+
+tbody tr:hover {
+  background-color: #f6fff7;
+}
+
+/* ============================
+   Cards de contato e mapa
+   ============================ */
+.contact-cards {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: var(--branco);
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+  flex: 1 1 260px;
+}
+
+.map-wrapper {
+  margin: 16px 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.05);
+}
+
+.map-wrapper iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  display: block;
+}
+
+/* ============================
+   Formulário de contato
+   ============================ */
+.form-wrapper {
+  margin-top: 8px;
+  background: var(--branco);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.03);
+}
+
+.form-wrapper form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.form-wrapper label {
+  display: block;
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+.form-wrapper input[type="text"],
+.form-wrapper input[type="email"],
+.form-wrapper textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--cinza);
+  border-radius: 10px;
+  font-size: 14px;
+  background: #fafafa;
+  resize: vertical;
+}
+
+/* textarea ocupa as duas colunas */
+.form-wrapper textarea {
+  grid-column: 1 / -1;
+  min-height: 120px;
+}
+
+/* ações do formulário */
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  margin-top: 6px;
+}
+
+/* botões */
+.cta {
+  background-color: var(--verde);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  font-weight: 800;
+  transition: background .15s ease, transform .12s ease;
+}
+
+.cta:hover { background-color: var(--verde-escuro); transform: translateY(-2px); }
+
+.btn-secondary {
+  background: #f2f2f2;
+  color: #333;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+}
+.btn-secondary:hover { background: #e8e8e8; }
+
+/* ============================
+   Rodapé
+   ============================ */
+.footer {
+  text-align: center;
+  padding: 16px;
+  background-color: #efefef;
+  border-radius: 12px;
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.03);
+}
+
+/* ============================
+   Ajustes menores e responsividade
+   ============================ */
+/* esconder barra de rolagem espessa em webkit no menu */
+.menu::-webkit-scrollbar{ width: 8px; }
+.menu::-webkit-scrollbar-thumb{ background: rgba(0,0,0,0.12); border-radius: 8px; }
+
+/* responsividade */
+@media (max-width: 1000px) {
+  .wrapper { max-width: 960px; gap: 16px; }
+  .header { height: 260px; }
+  .map-wrapper iframe { height: 260px; }
+}
+
+@media (max-width: 900px) {
+  /* transformar layout em coluna */
+  body { display: block; }
+  .wrapper { display: block; padding: 16px; margin: 12px auto; }
+  .menu {
+    position: relative;
+    width: 100%;
+    min-width: auto;
+    height: auto;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .menu ul { flex-direction: row; gap: 8px; flex-wrap: wrap; }
+  .menu a { padding: 8px 10px; font-size: 13px; border-radius: 8px; }
+  .main { padding-top: 12px; }
+  .header { height: 220px; margin-bottom: 12px; }
+  .form-wrapper form { grid-template-columns: 1fr; }
+  .card { flex: 1 1 100%; }
+}
+
+@media (max-width: 480px) {
+  .banner-texto h1 { font-size: 16px; }
+  .header { height: 180px; }
+  .map-wrapper iframe { height: 200px; }
+  .menu a { font-size: 12px; padding: 8px; }
+  .form-wrapper textarea { min-height: 100px; }
+}
