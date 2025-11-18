@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato — Clínica Veterinária</title>
+  <link rel="stylesheet" href="Assets/index.css" />
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- Menu lateral (padrão em todas as páginas) -->
+    <nav class="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="Index.html">Página Principal</a></li>
+        <li><a href="Sobre.html">Sobre</a></li>
+        <li><a href="Atendimento.html">Horário de Atendimento</a></li>
+        <li><a href="Contato.html" class="active">Contato</a></li>
+      </ul>
+    </nav>
+
+    <!-- Área principal -->
+    <main class="main">
+      <!-- Header com imagem diferente para a página de contato -->
+      <header class="header">
+        <img src="IMG/Recepção.jpg" alt="Recepção da clínica" />
+        <div class="banner-texto">
+          <h1>Fale com a gente</h1>
+        </div>
+      </header>
+
+      <!-- Conteúdo da página -->
+      <section class="content">
+        <h2>Contacte a Clínica</h2>
+
+        <!-- Contatos rápidos -->
+        <div class="contact-cards">
+          <div class="card">
+            <h3>Telefone</h3>
+            <p><strong>Telefone:</strong> (51) 98169-4364</p>
+            <p><strong>Celular / WhatsApp:</strong> (51) 9 98169-4364</p>
+          </div>
+
+          <div class="card">
+            <h3>Endereço</h3>
+            <p>Rua Exemplo 123</p>
+            <p>Bairro Centro — Novo Hamburgo / RS</p>
+            <p>CEP: 93500-000</p>
+          </div>
+        </div>
+
+        <!-- Mapa -->
+        <div class="map-wrapper">
+          <iframe
+            title="Mapa da clínica"
+            src="https://www.google.com/maps?q=Rua+Exemplo+123+Novo+Hamburgo+RS&output=embed"
+            frameborder="0"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <!-- Formulário de contato -->
+        <div class="form-wrapper">
+          <h3>Envie uma mensagem</h3>
+          <form action="#" method="post" id="contactForm" novalidate>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required />
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" required />
+
+            <label for="assunto">Assunto</label>
+            <input type="text" id="assunto" name="assunto" required />
+
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="6" required></textarea>
+
+            <div class="form-actions">
+              <button type="submit" class="cta">Enviar</button>
+              <button type="reset" class="btn-secondary">Limpar</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Footer padrão -->
+      <footer class="footer">
+        &copy; 2025 Clínica Veterinária — Todos os direitos reservados.
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
